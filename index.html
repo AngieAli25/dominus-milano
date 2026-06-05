@@ -184,14 +184,13 @@
     /* SERVICES */
     #services { background: #fff; }
     .svc-list { border-top: 1px solid var(--line); }
-    .svc { display: grid; grid-template-columns: 100px 1fr 1.4fr auto; gap: 40px; align-items: start; padding: 50px 0; border-bottom: 1px solid var(--line); position: relative; transition: border-color 0.5s var(--ease); }
-    .svc::before { content:''; position: absolute; inset: 0; background: none; transform: none; z-index: 0; }
-    .svc > * { position: relative; z-index: 1; transition: color 0.5s var(--ease); }
-    .svc:hover { border-bottom-color: var(--gold); }
-    .svc:hover .svc-n { color: var(--gold); }
+    .svc { display: grid; grid-template-columns: 100px 1fr 1.4fr auto; gap: 40px; align-items: start; padding: 50px 0; border-bottom: 1px solid var(--line); position: relative; transition: padding 0.5s var(--ease), border-color 0.5s var(--ease); }
+    .svc::before { content:''; position: absolute; left: 0; bottom: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.5s var(--ease); }
+    .svc > * { position: relative; z-index: 1; transition: color 0.5s var(--ease), transform 0.5s var(--ease); }
+    .svc:hover { padding-left: 24px; }
+    .svc:hover::before { height: 100%; }
     .svc:hover .svc-name { color: var(--gold); }
     .svc:hover .svc-name em { color: var(--ink); }
-    .svc:hover .svc-icon { color: var(--ink); }
     .svc-n { font-size: 12px; letter-spacing: 0.2em; color: var(--ink-60); font-weight: 500; transition: color 0.5s var(--ease); }
     .svc-icon { font-size: 34px; color: var(--gold); transition: color 0.5s var(--ease); }
     .svc-name { font-size: clamp(1.5rem, 2.4vw, 2.1rem); font-weight: 300; letter-spacing: -0.02em; color: var(--ink); transition: color 0.5s var(--ease); }
